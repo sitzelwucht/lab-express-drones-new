@@ -3,6 +3,8 @@
         <button type="button" class="btn btn-warning">create item</button>
         </a>
 </h2>
+
+{{#if drones}}
     <ul>
         {{#each drones}}
         <li>
@@ -21,4 +23,6 @@
         {{/each}}
     </ul>
 
-
+{{else}}
+    <div id="empty">You currently have no drones</div>
+{{/if}}
