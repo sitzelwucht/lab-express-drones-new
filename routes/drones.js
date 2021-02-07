@@ -28,13 +28,14 @@ router.post('/drones/create', (req, res, next) => {
       propellers: dronePropellers,
       maxSpeed: droneMaxSpeed
   }
+
     Drone.create(newDrone)
     .then(() => {
       res.redirect('/drones')
     })
     .catch((err) => {
       console.log(err)
-      res.render('drones/create-form.hbs')
+      res.render('drones/create-form.hbs', {msg: 'Something went wrong, please try again'})
     })
 });
 
@@ -44,6 +45,9 @@ router.get('/drones/:id/edit', (req, res, next) => {
     Drone.findById(id)
     .then(drone => {
       res.render('drones/update-form.hbs', {drone})
+    })
+    .catch((err) => {
+      console.log(err)
     })
     
 });
@@ -60,7 +64,7 @@ router.post('/drones/:id/edit', (req, res, next) => {
   })
   .catch((err) => {
     console.log(err)
-    res.render('drones/update-form.hbs', {drone})
+    res.render('drones/update-form.hbs', {drone: editedDrone, msg: 'Something went wrong, please try again'})
   })
 });
 

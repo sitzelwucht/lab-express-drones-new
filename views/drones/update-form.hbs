@@ -12,6 +12,11 @@
     <label for="droneMaxSpeed" class="form-label">Max speed</label>
     <input name="droneMaxSpeed" type="number" class="form-control" id="droneMaxSpeed" value="{{drone.maxSpeed}}" required>
   </div>
+
+    {{#if msg}}
+  <div class="error-msg">{{msg}}</div>
+  {{/if}}
+  
   
   <button type="submit" class="btn btn-primary">Edit</button>
 </form>

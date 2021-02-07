@@ -3,7 +3,9 @@
         <button type="button" class="btn btn-warning">create item</button>
         </a>
 </h2>
-
+{{#if msg}}
+<div>{{message}}</div>
+{{/if}}
 {{#if drones}}
     <ul>
         {{#each drones}}

@@ -47,3 +47,7 @@ span {
 #empty {
   padding: 2em
 }
+.error-msg {
+  color: red;
+  margin: 1.5em;
+}
